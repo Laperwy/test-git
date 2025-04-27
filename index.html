@@ -4,8 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>git-test</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <button class="theme-switcher" id="themeSwitcher">Темная тема</button>
     <h1>git-test</h1>
+    <script>
+        const themeSwitcher = document.getElementById('themeSwitcher');
+        const body = document.body;
+        let isDark = false;
+
+        themeSwitcher.addEventListener('click', () => {
+            isDark = !isDark;
+            if (isDark) {
+                body.setAttribute('data-theme', 'dark');
+                themeSwitcher.textContent = 'Светлая тема';
+            } else {
+                body.removeAttribute('data-theme');
+                themeSwitcher.textContent = 'Темная тема';
+            }
+        });
+    </script>
 </body>
 </html>
